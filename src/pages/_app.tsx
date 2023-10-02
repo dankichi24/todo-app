@@ -1,9 +1,13 @@
-import type { AppProps } from "next/app";
+import React from "react";
+import { AppProps } from "next/app";
 
-import "@/styles/globals.css";
-import Layout from "@/layout";
+import "antd/dist/antd.css";
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
+import Layout from "@/components/organisms/Layout";
+
+const MyApp = (app: AppProps) => {
+  const { Component, pageProps } = app;
+
   return (
     <Layout>
       <Component {...pageProps} />

@@ -1,44 +1,15 @@
-import type { NextPage } from "next";
+import React from "react";
 
-import { useTodos } from "@/hooks/useTodos";
-import { UI_DATA } from "@/constants/uidata";
-import Title from "@/components/Title";
-import TodoInput from "@/components/TodoInput";
-import TodoList from "@/components/TodoList";
+import Main from "@/components/page/Main";
+import Title from "@/components/atoms/Title";
 
-const HomePage: NextPage = () => {
-  const {
-    todo,
-    setTodo,
-    todos,
-    todoId,
-    createTodo,
-    updateStatusTodo,
-    updateTitleTodo,
-    deleteTodo,
-  } = useTodos();
-
+const Index = () => {
   return (
-    <div className="mx-auto max-w-lg mt-10">
-      <div>
-        <Title>{UI_DATA.HOME_TITLE}</Title>
-        <TodoInput
-          todo={todo}
-          setTodo={setTodo}
-          todoId={todoId}
-          onClick={createTodo}
-        />
-      </div>
-      <div className="mt-10">
-        <TodoList
-          todos={todos}
-          updateStatusTodo={updateStatusTodo}
-          updateTitleTodo={updateTitleTodo}
-          deleteTodo={deleteTodo}
-        />
-      </div>
-    </div>
+    <>
+      <Title>Firebase Todo App</Title>
+      <Main />
+    </>
   );
 };
 
-export default HomePage;
+export default Index;
